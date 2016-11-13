@@ -11,5 +11,10 @@ cc.Class({
         this.id = data.id;
         this.icon.spriteFrame = data.icon;
         this.levelNum.string = "Level " + this.id;
+    },
+
+    LoadScene: function()
+    {
+        cc.director.loadScene('Level' + this.id);
     }
 });
