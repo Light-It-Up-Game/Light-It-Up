@@ -378,7 +378,7 @@
       "__id__": 6
     },
     "_enabled": true,
-    "transition": 0,
+    "transition": 1,
     "pressedColor": {
       "__type__": "cc.Color",
       "r": 211,
