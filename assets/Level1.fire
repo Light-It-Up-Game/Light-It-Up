@@ -87,6 +87,9 @@
       },
       {
         "__id__": 28
+      },
+      {
+        "__id__": 38
       }
     ],
     "_rotationX": 0,
@@ -108,10 +111,10 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 38
+        "__id__": 45
       },
       {
-        "__id__": 39
+        "__id__": 46
       }
     ],
     "_prefab": null,
@@ -497,8 +500,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 349,
-      "y": -517
+      "x": 245,
+      "y": -477
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -683,8 +686,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": -82,
-      "y": -238
+      "x": -186,
+      "y": -198
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -768,8 +771,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": -82,
-      "y": -238
+      "x": -186,
+      "y": -198
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -988,8 +991,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": -67,
-      "y": 215
+      "x": -171,
+      "y": 255
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -1227,6 +1230,146 @@
       "__id__": 21
     },
     "_enabled": true
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "list",
+    "_objFlags": 0,
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_cascadeOpacityEnabled": true,
+    "_parent": {
+      "__id__": 2
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 100,
+      "height": 500
+    },
+    "_children": [],
+    "_rotationX": 0,
+    "_rotationY": 0,
+    "_scaleX": 1,
+    "_scaleY": 1,
+    "_position": {
+      "__type__": "cc.Vec2",
+      "x": 378,
+      "y": -31
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_localZOrder": 0,
+    "_globalZOrder": 0,
+    "_tag": -1,
+    "_opacityModifyRGB": false,
+    "_id": "795adhxq5BFL5AdeqkflTka",
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 39
+      },
+      {
+        "__id__": 44
+      }
+    ],
+    "_prefab": null,
+    "groupIndex": 0
+  },
+  {
+    "__type__": "81126tipJJFQJ7fpnZcNOOM",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 38
+    },
+    "_enabled": true,
+    "items": [
+      {
+        "__id__": 40
+      },
+      {
+        "__id__": 41
+      },
+      {
+        "__id__": 42
+      },
+      {
+        "__id__": 43
+      }
+    ],
+    "itemPrefab": {
+      "__uuid__": "56ab147d-121b-44b5-9f1d-da3609de2dfe"
+    }
+  },
+  {
+    "__type__": "item",
+    "id": 0,
+    "itemName": "battery",
+    "iconSF": {
+      "__uuid__": "816835ea-6f74-44d8-8c95-9f9903a9a2df"
+    }
+  },
+  {
+    "__type__": "item",
+    "id": 1,
+    "itemName": "switch",
+    "iconSF": {
+      "__uuid__": "a9b61247-2b83-41fb-bace-1edb56942b89"
+    }
+  },
+  {
+    "__type__": "item",
+    "id": 2,
+    "itemName": "bulb",
+    "iconSF": {
+      "__uuid__": "5fc1ebbf-3a9e-4410-8a66-ebd23dffe9e5"
+    }
+  },
+  {
+    "__type__": "item",
+    "id": 3,
+    "itemName": "readme1",
+    "iconSF": {
+      "__uuid__": "b6ec6a51-fc45-4898-bbd6-388f70addec4"
+    }
+  },
+  {
+    "__type__": "cc.Layout",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 38
+    },
+    "_enabled": true,
+    "_layoutSize": {
+      "__type__": "cc.Size",
+      "width": 100,
+      "height": 500
+    },
+    "_resize": 1,
+    "_N$layoutType": 2,
+    "_N$cellSize": {
+      "__type__": "cc.Size",
+      "width": 40,
+      "height": 40
+    },
+    "_N$startAxis": 0,
+    "_N$padding": 20,
+    "_N$spacingX": 30,
+    "_N$spacingY": 100,
+    "_N$verticalDirection": 1,
+    "_N$horizontalDirection": 0
   },
   {
     "__type__": "cc.Canvas",
