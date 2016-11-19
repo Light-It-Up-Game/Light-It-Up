@@ -17,6 +17,7 @@ cc.Class({
 
     // use this for initialization
     onLoad: function () {
+        this.lightOn = false;
 
     },
 
@@ -24,18 +25,20 @@ cc.Class({
     // update: function (dt) {
 
     // },
-    LightOn: function()
+    Toggle: function()
     {
         var self = this;
+        self.lightOn = !this.lightOn;
         var sprite = self.getComponent(cc.Sprite);
-        sprite.spriteFrame = self.bulbOnFrame;
-        this.node.parent.getComponent('game1').YouWin();
+        if (self.lightOn)
+        {
+            sprite.spriteFrame = self.bulbOnFrame;
+        }
+        else
+        {
+            sprite.spriteFrame = self.bulbOffFrame;
+        }
+        //this.node.parent.getComponent('game1').YouWin(); // should not be here
     },
 
-    LightOff: function()
-    {
-        var self = this;
-        var sprite = self.getComponent(cc.Sprite);
-        sprite.spriteFrame = self.bulbOffFrame;
-    },
 });

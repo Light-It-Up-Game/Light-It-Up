@@ -17,38 +17,27 @@ cc.Class({
     // use this for initialization
     onload: function()
     {
+        this.switch = false;
 
     },
     
-    SwitchOff: function () {
+    Toggle: function () 
+    {
+        this.switch = !this.switch;
         var children = this.node.children;
         for (var i = 0; i < children.length; i++)
         {
             if (children[i].name == "switch_on")
             {
-                children[i].active = false;
+                children[i].active = this.switch;
             }
             else if (children[i].name == "switch_off")
             {
-                children[i].active = true;
+                children[i].active = !this.switch;
             }
         }
     },
 
-    SwitchOn: function () {
-        var children = this.node.children;
-        for (var i = 0; i < children.length; i++)
-        {
-            if (children[i].name == "switch_on")
-            {
-                children[i].active = true;
-            }
-            else if (children[i].name == "switch_off")
-            {
-                children[i].active = false;
-            }
-        }
-    },
     // called every frame, uncomment this function to activate update callback
     // update: function (dt) {
 
