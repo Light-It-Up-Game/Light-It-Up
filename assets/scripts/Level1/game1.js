@@ -2,9 +2,13 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        //winPrefab: cc.Prefab,
+        win:
+        {
+            default: null,
+            type: cc.Node
+        }
     },
-    // use this for initialization 
+    // use this for initialization
     onLoad: function () {
         this.switch = false;
     },
@@ -16,6 +20,7 @@ cc.Class({
     SwitchOn: function()
     {
         this.switch = true;
+        this.YouWin();
     },
 
     SwitchOff: function()
@@ -35,7 +40,6 @@ cc.Class({
 
     YouWin: function()
     {
-        //var win = cc.instantiate(this.winPrefab);
-        //this.node.addChild(win);
+        this.win.active = true;
     }
 });
