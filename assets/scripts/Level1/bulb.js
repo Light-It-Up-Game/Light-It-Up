@@ -29,7 +29,7 @@ cc.Class({
         var self = this;
         var sprite = self.getComponent(cc.Sprite);
         sprite.spriteFrame = self.bulbOnFrame;
-        console.log(sprite.spriteFrame);
+        this.node.parent.getComponent('game1').YouWin();
     },
 
     LightOff: function()
@@ -37,6 +37,5 @@ cc.Class({
         var self = this;
         var sprite = self.getComponent(cc.Sprite);
         sprite.spriteFrame = self.bulbOffFrame;
-        console.log(sprite.spriteFrame);
     },
 });

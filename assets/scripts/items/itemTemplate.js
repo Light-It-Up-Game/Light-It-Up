@@ -3,7 +3,7 @@ cc.Class({
     properties: {
         id: 0,
         icon: cc.Sprite,
-        itemName: '',
+        itemName: '',  // @NOTE we use itemName to find itemName.md which will be shown on screen
     },
 
     init: function(data)
@@ -15,6 +15,7 @@ cc.Class({
     
     LoadInfo: function()
     {
-        var i = 0;
+        var self = this;
+        self.node.parent.getComponent('itemList').ShowReadMe(self.itemName);
     }
 });

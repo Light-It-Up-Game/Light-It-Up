@@ -1,0 +1,17 @@
+{
+  "excludeScenes": [],
+  "includeAnySDK": false,
+  "includeSdk": [
+    "anysdk"
+  ],
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.LightItUp",
+  "startScene": "26ad538a-8de5-4c09-b807-9b5f821b5503",
+  "title": "LightItUp",
+  "webOrientation": "auto"
+}

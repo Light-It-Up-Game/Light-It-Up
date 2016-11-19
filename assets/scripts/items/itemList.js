@@ -1,10 +1,14 @@
+var emptyFunc = function (event) {
+    event.stopPropagation();
+};
+
 var Item = cc.Class({
     name: 'item',
     properties: 
     {
         id: 0,
         itemName: '',
-        iconSF: cc.SpriteFrame
+        iconSF: cc.SpriteFrame,
     }
 });
 
@@ -18,6 +22,21 @@ cc.Class({
             type: Item
         },
         itemPrefab: cc.Prefab,
+                readme:
+        {
+            default: null,
+            type: cc.Node
+        },
+        text:
+        {
+            default: null,
+            type: cc.Label
+        },
+        mask:
+        {
+            default: null,
+            type: cc.Node
+        }
     },
 
     onLoad: function()
@@ -33,6 +52,29 @@ cc.Class({
                 iconSF: data.iconSF
             });
         }
-    }
+    },
 
+    ShowReadMe: function(itemName)
+    {
+        var self = this;
+        cc.loader.loadRes('readme/' + itemName, function(err, txt){
+            if (err)
+            {
+                self.text.string = "Error loading readme file";
+                console.log(txt);
+                return;
+            }
+            self.text.string = txt;
+        });
+
+        // set to active
+        self.readme.active = true;
+        self.mask.on('touchstart', emptyFunc, this);
+    },
+    
+    onOKButtonPressed: function()
+    {
+        this.readme.active = false;
+        this.mask.off('touchstart', emptyFunc, this);
+    }
 });
