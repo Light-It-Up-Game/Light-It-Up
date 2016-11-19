@@ -2,7 +2,6 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        //winPrefab: cc.Prefab,
     },
     // use this for initialization 
     onLoad: function () {
