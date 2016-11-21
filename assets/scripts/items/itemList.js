@@ -1,7 +1,3 @@
-var emptyFunc = function (event) {
-    event.stopPropagation();
-};
-
 var Item = cc.Class({
     name: 'item',
     properties: 
@@ -32,11 +28,6 @@ cc.Class({
             default: null,
             type: cc.Label
         },
-        mask:
-        {
-            default: null,
-            type: cc.Node
-        }
     },
 
     onLoad: function()
@@ -69,12 +60,10 @@ cc.Class({
 
         // set to active
         self.readme.active = true;
-        self.mask.on('touchstart', emptyFunc, this);
     },
     
     onOKButtonPressed: function()
     {
         this.readme.active = false;
-        this.mask.off('touchstart', emptyFunc, this);
     }
 });
