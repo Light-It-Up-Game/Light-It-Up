@@ -1686,7 +1686,7 @@
     },
     "_enabled": true,
     "capacitanceChargedFrame": {
-      "__uuid__": "20c5395d-fb5b-4b5e-855f-8ecda6f10e12"
+      "__uuid__": "974b07e2-5764-464b-8f5a-93554f099094"
     },
     "capacitanceUnchargedFrame": {
       "__uuid__": "7ff92473-41e8-4801-b556-55f4a43d082f"
@@ -2485,7 +2485,7 @@
   {
     "__type__": "item",
     "id": 3,
-    "itemName": "instruction2",
+    "itemName": "instruction3",
     "iconSF": {
       "__uuid__": "b6ec6a51-fc45-4898-bbd6-388f70addec4"
     }
@@ -2956,9 +2956,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 0,
+      "g": 0,
+      "b": 0,
       "a": 255
     },
     "_cascadeOpacityEnabled": true,
@@ -3032,7 +3032,7 @@
       "__id__": 86
     },
     "_enabled": true,
-    "isAlignOnce": true,
+    "isAlignOnce": false,
     "_alignFlags": 1,
     "_left": 0,
     "_right": 0,

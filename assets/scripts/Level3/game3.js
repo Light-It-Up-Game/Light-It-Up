@@ -26,35 +26,29 @@ cc.Class({
         this.switch1 = false;
         this.switch2 = false;
         this.charged = false;
-        this.bulb = false;
-        this.win = false;
+        this.lightOn = false;
     },
 
     Switch1Toggle: function()
     {
         var self = this;
         self.switch1 = !self.switch1;
-        if (self.switch1 && self.switch2 && !this.bulb)  // battery lights the bulb up
+        if (self.switch1 && self.switch2 && !this.lightOn)  // battery lights the bulb up
         {
             self.bulb.getComponent('bulb').Toggle();
-            self.bulb= !self.bulb;
+            self.lightOn= !self.lightOn;
         }
         else if (self.switch1 && self.charged && !self.switch2)
         {
-            self.capacitance.getComponent('capacitance').Toggle();
-            self.bulb.getComponent('bulb').Toggle();
-            // wait 5 seconds to turn off
-            var delay = 5;
-            self.scheduleOnce(function(){
-                if (!self.bulb)
-                {
-                    self.bulb.getComponent('bulb').Toggle();
-                    self.bulb= !self.bulb;
-                }
-            }, delay);
+            this.Release();
             // @NOTE only when we light the bulb up using the capacitance as power will we win
-            self.win = true;  
             this.YouWin();
+        }
+
+        else if (!self.switch1)
+        {
+            self.bulb.getComponent('bulb').Toggle();
+            self.lightOn= !self.lightOn;
         }
     },
 
@@ -66,11 +60,24 @@ cc.Class({
         {
             self.charged = true;
             self.capacitance.getComponent('capacitance').Toggle();
+            if (self.switch2 && !self.lightOn)
+            {
+                self.bulb.getComponent('bulb').Toggle();
+                self.lightOn = !self.lightOn;
+            }
         }
         
-        if (self.switch1)
+        else if (self.switch1)
         {
-            self.bulb.getComponent('bulb').Toggle();
+            if (self.charged)  // we can still light it up
+            {
+                this.Release();
+            }
+            else
+            {
+                self.bulb.getComponent('bulb').Toggle();
+                self.lightOn = !self.lightOn;
+            }
         }
     },
     
@@ -83,4 +90,22 @@ cc.Class({
     {
         cc.director.loadScene('Level4');
     },
+
+    Release: function()
+    {
+        self = this;
+        if (!self.lightOn)  // if light is off, we first light it up
+        {
+            self.lightOn= true;
+            self.bulb.getComponent('bulb').Toggle();
+        }
+        // wait 5 seconds to turn off
+        var delay = 1;
+        self.scheduleOnce(function(){
+            self.bulb.getComponent('bulb').Toggle();
+            self.lightOn = false;
+            self.capacitance.getComponent('capacitance').Toggle();
+            self.charged = false;
+        }, delay);
+    }
 });
