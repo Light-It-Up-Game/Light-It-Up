@@ -45,7 +45,7 @@ cc.Class({
             this.YouWin();
         }
 
-        else if (!self.switch1)
+        else if (!self.switch1 && self.lightOn)
         {
             self.bulb.getComponent('bulb').Toggle();
             self.lightOn= !self.lightOn;
