@@ -231,8 +231,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 560,
-      "height": 140
+      "width": 600,
+      "height": 480
     },
     "_children": [],
     "_rotationX": 0,
@@ -303,9 +303,6 @@
     "id": 1,
     "icon": {
       "__uuid__": "3ec63f7b-d183-4037-8d10-689631640620"
-    },
-    "iconSolid": {
-      "__uuid__": "28275995-c6bb-4db7-8c7a-8cfc1853abfe"
     }
   },
   {
@@ -313,9 +310,6 @@
     "id": 2,
     "icon": {
       "__uuid__": "3ec63f7b-d183-4037-8d10-689631640620"
-    },
-    "iconSolid": {
-      "__uuid__": "28275995-c6bb-4db7-8c7a-8cfc1853abfe"
     }
   },
   {
@@ -323,9 +317,6 @@
     "id": 3,
     "icon": {
       "__uuid__": "3ec63f7b-d183-4037-8d10-689631640620"
-    },
-    "iconSolid": {
-      "__uuid__": "28275995-c6bb-4db7-8c7a-8cfc1853abfe"
     }
   },
   {
@@ -333,9 +324,6 @@
     "id": 4,
     "icon": {
       "__uuid__": "3ec63f7b-d183-4037-8d10-689631640620"
-    },
-    "iconSolid": {
-      "__uuid__": "28275995-c6bb-4db7-8c7a-8cfc1853abfe"
     }
   },
   {
@@ -343,9 +331,6 @@
     "id": 5,
     "icon": {
       "__uuid__": "3ec63f7b-d183-4037-8d10-689631640620"
-    },
-    "iconSolid": {
-      "__uuid__": "28275995-c6bb-4db7-8c7a-8cfc1853abfe"
     }
   },
   {
@@ -353,9 +338,6 @@
     "id": 6,
     "icon": {
       "__uuid__": "3ec63f7b-d183-4037-8d10-689631640620"
-    },
-    "iconSolid": {
-      "__uuid__": "28275995-c6bb-4db7-8c7a-8cfc1853abfe"
     }
   },
   {
@@ -368,8 +350,8 @@
     "_enabled": true,
     "_layoutSize": {
       "__type__": "cc.Size",
-      "width": 560,
-      "height": 140
+      "width": 600,
+      "height": 480
     },
     "_resize": 1,
     "_N$layoutType": 3,
@@ -395,10 +377,10 @@
     "_enabled": true,
     "isAlignOnce": true,
     "_alignFlags": 45,
-    "_left": 200,
-    "_right": 200,
-    "_top": 300,
-    "_bottom": 200,
+    "_left": 180,
+    "_right": 180,
+    "_top": 130,
+    "_bottom": 30,
     "_verticalCenter": 0,
     "_horizontalCenter": 0,
     "_isAbsLeft": true,
