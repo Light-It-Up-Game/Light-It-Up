@@ -60,7 +60,7 @@ cc.Class({
         {
             self.charged = true;
             self.capacitance.getComponent('capacitance').Toggle();
-            if (self.switch2 && !self.lightOn)
+            if (self.switch1 && !self.lightOn)
             {
                 self.bulb.getComponent('bulb').Toggle();
                 self.lightOn = !self.lightOn;
