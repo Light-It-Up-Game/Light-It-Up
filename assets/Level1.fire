@@ -967,7 +967,7 @@
     "target": {
       "__id__": 22
     },
-    "component": "switch",
+    "component": "cc.MissingScript",
     "handler": "Toggle",
     "customEventData": ""
   },

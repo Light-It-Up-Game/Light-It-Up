@@ -2,13 +2,13 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        bulbOnFrame:
+        capacitanceChargedFrame:
         {
             default: null,
             type: cc.SpriteFrame
         },
 
-        bulbOffFrame:
+        capacitanceUnchargedFrame:
         {
             default: null,
             type: cc.SpriteFrame
@@ -17,22 +17,22 @@ cc.Class({
 
     // use this for initialization
     onLoad: function () {
-        this.lightOn = false;
+        this.charged = false;
 
     },
 
     Toggle: function()
     {
         var self = this;
-        self.lightOn = !self.lightOn;
+        self.charged = !self.charged;
         var sprite = self.getComponent(cc.Sprite);
-        if (self.lightOn)
+        if (self.charged)
         {
-            sprite.spriteFrame = self.bulbOnFrame;
+            sprite.spriteFrame = self.capacitanceChargedFrame;
         }
         else
         {
-            sprite.spriteFrame = self.bulbOffFrame;
+            sprite.spriteFrame = self.capacitanceUnchargedFrame;
         }
     },
 

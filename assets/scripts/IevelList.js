@@ -33,7 +33,7 @@ cc.Class({
                 icon: data.icon
             });
         }
-
+        // detect EXIT key event
         cc.eventManager.addListener({
             event: cc.EventListener.KEYBOARD,
             onKeyPressed: function(keyCode, event) 

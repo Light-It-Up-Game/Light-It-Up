@@ -24,12 +24,30 @@ cc.Class({
         this.switch0 = false;
         this.switch1 = false;
         this.switch2 = false;
+        // detect EXIT key event
+        cc.eventManager.addListener({
+            event: cc.EventListener.KEYBOARD,
+            onKeyPressed: function(keyCode, event) 
+            {
+                if (keyCode === cc.KEY.back) 
+                {
+                    // the back button of Android Device is pressed
+                    // maybe it's not work in Web environment
+                    cc.director.end();
+                }
+                else if (keyCode === cc.KEY.backspace) 
+                {
+                    // the backspace of PC/Mac is pressed
+                }
+                else if (keyCode === cc.KEY.escape) 
+                {
+                    // the escape of PC/Mac is pressed
+                    cc.director.end();
+                }
+            }
+        }, this.node);
     },
 
-    // called every frame, uncomment this function to activate update callback
-    // update: function (dt) {
-
-    // },
     Switch0Toggle: function()
     {
         this.switch0 = !this.switch0;
