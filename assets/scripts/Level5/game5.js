@@ -76,10 +76,17 @@ cc.Class({
         console.log(self.itemSelected);
         if (gridNum < 5 && gridNum >= 0)  // valid number
         {
-            if (self.itemSelected == 'bulb' || self.itemSelected == 'switch')
+            if (self.itemSelected == 'bulb')
             {
                 self.grids[gridNum].getComponent('grid').SetItem(self.itemSelected);
                 self.selectionBulb.getComponent('selectionTemplate').DecreaseNum();
+                console.log(self.items[gridNum]);
+                self.items[gridNum] = self.itemSelected;
+            }
+            else if (self.itemSelected == 'switch')
+            {
+                self.grids[gridNum].getComponent('grid').SetItem(self.itemSelected);
+                self.selectionSwitch.getComponent('selectionTemplate').DecreaseNum();
                 console.log(self.items[gridNum]);
                 self.items[gridNum] = self.itemSelected;
             }

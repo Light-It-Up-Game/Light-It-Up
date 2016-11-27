@@ -16,12 +16,12 @@ cc.Class({
     DecreaseNum: function()
     {
         var self = this;
-        if (self.number > 1)
+        if (self.number > 0)
         {
             self.number--;
             self.labelNum.string = 'x' + this.number;
         }
-        else
+        if (self.number == 0)
         {
             self.node.getComponent(cc.Button).interactable = false;
         }
