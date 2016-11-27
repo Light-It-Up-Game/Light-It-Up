@@ -14,6 +14,18 @@ cc.Class({
             type: cc.Node
         },
 
+        warning:
+        {
+            default: null,
+            type: cc.Node
+        },
+
+        nodeSwitch0:
+        {
+            default: null,
+            type: cc.Node
+        },
+
         selectionBulb:
         {
             default: null,
@@ -37,13 +49,32 @@ cc.Class({
     {
         this.switch0 = false;
         this.itemSelected = '';
-        this.items = ['banana', 'apple', 'orange', 'pear', 'grape'];
+        this.items = ['', '', '', '', ''];
+        this.gridsReady = 0;
     },
 
     Switch0Toggle: function()
     {
         var self = this;
-        self.switch0 = !self.switch0;
+        if (false == self.switch0)
+        {
+            if (self.gridsReady >= 5) // all grids had been set an item respectively
+            {
+                self.switch0 = !self.switch0;
+                self.nodeSwitch0.getComponent('switch').Toggle();
+                self.warning.active = false;
+                self.switch0 = !self.switch0;
+            }
+            else
+            {
+                self.warning.active = true;
+            }
+        }
+        else
+        {
+            self.switch0 = !self.switch0;
+            self.nodeSwitch0.getComponent('switch').Toggle();
+        }
     },
     
     YouWin: function()
@@ -72,8 +103,6 @@ cc.Class({
     {
         var self = this;
         var gridNum = parseInt(customEventData);
-        console.log(gridNum);
-        console.log(self.itemSelected);
         if (gridNum < 5 && gridNum >= 0)  // valid number
         {
             if (self.itemSelected == 'bulb')
@@ -82,6 +111,7 @@ cc.Class({
                 self.selectionBulb.getComponent('selectionTemplate').DecreaseNum();
                 console.log(self.items[gridNum]);
                 self.items[gridNum] = self.itemSelected;
+                self.gridsReady++;
             }
             else if (self.itemSelected == 'switch')
             {
@@ -89,6 +119,7 @@ cc.Class({
                 self.selectionSwitch.getComponent('selectionTemplate').DecreaseNum();
                 console.log(self.items[gridNum]);
                 self.items[gridNum] = self.itemSelected;
+                self.gridsReady++;
             }
         }
     },
@@ -102,4 +133,9 @@ cc.Class({
     {
         cc.director.loadScene('Level4');
     },
+
+    HideWarning: function()
+    {
+        this.warning.active = false;
+    }
 });
