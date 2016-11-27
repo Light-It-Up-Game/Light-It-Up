@@ -50,6 +50,7 @@ cc.Class({
         this.switch0 = false;
         this.itemSelected = '';
         this.items = ['', '', '', '', ''];
+        this.gridBulbOn = [false, false, false, false, false];
         this.gridsReady = 0;
     },
 
@@ -63,7 +64,12 @@ cc.Class({
                 self.switch0 = !self.switch0;
                 self.nodeSwitch0.getComponent('switch').Toggle();
                 self.warning.active = false;
-                self.switch0 = !self.switch0;
+                console.log('self.switch0: ' + self.switch0);
+                if (self.switch0 == true)
+                {
+                    console.log('IsOver is invoked');
+                    self.IsOver();
+                }
             }
             else
             {
@@ -74,6 +80,14 @@ cc.Class({
         {
             self.switch0 = !self.switch0;
             self.nodeSwitch0.getComponent('switch').Toggle();
+            for (var i = 0; i < 5; i++)
+            {
+                if (true == self.gridBulbOn[i])
+                {
+                    self.grids[i].getComponent('grid').bulb.getComponent('bulb').Toggle();
+                }
+            }
+
         }
     },
     
@@ -109,7 +123,6 @@ cc.Class({
             {
                 self.grids[gridNum].getComponent('grid').SetItem(self.itemSelected);
                 self.selectionBulb.getComponent('selectionTemplate').DecreaseNum();
-                console.log(self.items[gridNum]);
                 self.items[gridNum] = self.itemSelected;
                 self.gridsReady++;
             }
@@ -117,41 +130,110 @@ cc.Class({
             {
                 self.grids[gridNum].getComponent('grid').SetItem(self.itemSelected);
                 self.selectionSwitch.getComponent('selectionTemplate').DecreaseNum();
-                console.log(self.items[gridNum]);
                 self.items[gridNum] = self.itemSelected;
                 self.gridsReady++;
             }
         }
     },
 
-    update: function(dt)
+    IsOver: function()
     {
         self = this;
-        if (self.gridsReady < 5 || false == self.switch0)
+        console.log(self.switch0);
+        for (var i = 0; i < 5; i++)
+        {
+            console.log(self.items[i]);
+        }
+        if (false == self.switch0)
         {
             return;
         }
 
-        if (self.items[3] == 'switch' && self.items[4] == 'switch')
+        if (self.items[0] == 'switch' && self.items[1] == 'switch')
         {
-            for (var i = 0; i < 3; i++)
-            {
-                self.grids[i].bulb.getComponent('bulb').Toggle();
-            }
+            self.grids[2].getComponent('grid').bulb.getComponent('bulb').Toggle();
+            self.gridBulbOn[2] = true;
+            self.grids[4].getComponent('grid').bulb.getComponent('bulb').Toggle();
+            self.gridBulbOn[4] = true;
+        }
+
+        else if (self.items[0] == 'switch' && self.items[2] == 'switch')  // a solution
+        {
+            self.grids[1].getComponent('grid').bulb.getComponent('bulb').Toggle();
+            self.gridBulbOn[1] = true;
+            self.grids[3].getComponent('grid').bulb.getComponent('bulb').Toggle();
+            self.gridBulbOn[3] = true;
+            self.grids[4].getComponent('grid').bulb.getComponent('bulb').Toggle();
+            self.gridBulbOn[4] = true;
             self.YouWin();
         }
 
-        else if (self.items[0] == 'switch' && self.items[1] == 'switch')
+        else if (self.items[0] == 'switch' && self.items[3] == 'switch')
         {
-            self.grids[2].bulb.getComponent('bulb').Toggle();
-            self.grids[4].bulb.getComponent('bulb').Toggle();
+            self.grids[2].getComponent('grid').bulb.getComponent('bulb').Toggle();
+            self.gridBulbOn[2] = true;
+            self.grids[4].getComponent('grid').bulb.getComponent('bulb').Toggle();
+            self.gridBulbOn[4] = true;
+        }
+
+        else if (self.items[0] == 'switch' && self.items[4] == 'switch')
+        {
+            self.YouLose();
+        }
+
+        else if (self.items[1] == 'switch' && self.items[2] == 'switch')
+        {
+            self.grids[0].getComponent('grid').bulb.getComponent('bulb').Toggle();
+            self.gridBulbOn[0] = true;
+            self.grids[3].getComponent('grid').bulb.getComponent('bulb').Toggle();
+            self.gridBulbOn[3] = true;
+        }
+
+        else if (self.items[1] == 'switch' && self.items[3] == 'switch')
+        {
+            self.grids[2].getComponent('grid').bulb.getComponent('bulb').Toggle();
+            self.gridBulbOn[2] = true;
+            self.grids[4].getComponent('grid').bulb.getComponent('bulb').Toggle();
+            self.gridBulbOn[4] = true;
+        }
+
+        else if (self.items[1] == 'switch' && self.items[4] == 'switch')
+        {
+            self.grids[0].getComponent('grid').bulb.getComponent('bulb').Toggle();
+            self.gridBulbOn[0] = true;
+            self.grids[3].getComponent('grid').bulb.getComponent('bulb').Toggle();
+            self.gridBulbOn[3] = true;
+        }
+
+        else if (self.items[2] == 'switch' && self.items[3] == 'switch')
+        {
+            self.YouLose();
+        }
+
+        else if (self.items[2] == 'switch' && self.items[4] == 'switch')
+        {
+            self.grids[0].getComponent('grid').bulb.getComponent('bulb').Toggle();
+            self.gridBulbOn[0] = true;
+            self.grids[3].getComponent('grid').bulb.getComponent('bulb').Toggle();
+            self.gridBulbOn[3] = true;
+        }
+
+        else if (self.items[3] == 'switch' && self.items[4] == 'switch')  // a solution
+        {
+            self.grids[0].getComponent('grid').bulb.getComponent('bulb').Toggle();
+            self.gridBulbOn[0] = true;
+            self.grids[1].getComponent('grid').bulb.getComponent('bulb').Toggle();
+            self.gridBulbOn[1] = true;
+            self.grids[2].getComponent('grid').bulb.getComponent('bulb').Toggle();
+            self.gridBulbOn[2] = true;
+            self.YouWin();
         }
 
     },
 
     Reload: function()
     {
-        cc.director.loadScene('Level4');
+        cc.director.loadScene('Level5');
     },
 
     HideWarning: function()
