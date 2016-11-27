@@ -4750,7 +4750,7 @@
     "target": {
       "__id__": 2
     },
-    "component": "game4",
+    "component": "game5",
     "handler": "Reload",
     "customEventData": ""
   },
