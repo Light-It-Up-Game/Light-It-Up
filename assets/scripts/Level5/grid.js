@@ -9,6 +9,18 @@ cc.Class({
             type: cc.Node
         },
 
+        bulb:
+        {
+            default: null,
+            type: cc.Node
+        },
+
+        switch:
+        {
+            default: null,
+            type: cc.Node
+        },
+
         id: 0,
     },
 
@@ -21,6 +33,15 @@ cc.Class({
     SetItem: function(itemName)
     {
         // the button should be disabled from now on
+        this.button.getComponent(cc.Button).interactable = false;
+        if (itemName == 'bulb')
+        {
+            this.bulb.active = true;
+        }
+        if (itemName == 'switch')
+        {
+            this.switch.active = true;
+        }
     }
 
 })

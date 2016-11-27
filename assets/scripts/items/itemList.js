@@ -18,7 +18,7 @@ cc.Class({
             type: Item
         },
         itemPrefab: cc.Prefab,
-                readme:
+        readme:
         {
             default: null,
             type: cc.Node
