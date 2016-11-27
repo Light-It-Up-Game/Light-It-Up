@@ -126,6 +126,26 @@ cc.Class({
 
     update: function(dt)
     {
+        self = this;
+        if (self.gridsReady < 5 || false == self.switch0)
+        {
+            return;
+        }
+
+        if (self.items[3] == 'switch' && self.items[4] == 'switch')
+        {
+            for (var i = 0; i < 3; i++)
+            {
+                self.grids[i].bulb.getComponent('bulb').Toggle();
+            }
+            self.YouWin();
+        }
+
+        else if (self.items[0] == 'switch' && self.items[1] == 'switch')
+        {
+            self.grids[2].bulb.getComponent('bulb').Toggle();
+            self.grids[4].bulb.getComponent('bulb').Toggle();
+        }
 
     },
 
