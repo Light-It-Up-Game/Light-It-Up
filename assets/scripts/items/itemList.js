@@ -52,7 +52,6 @@ cc.Class({
             if (err)
             {
                 self.text.string = "Error loading readme file";
-                console.log(txt);
                 return;
             }
             self.text.string = txt;

@@ -52,6 +52,8 @@ cc.Class({
         this.items = ['', '', '', '', ''];
         this.gridBulbOn = [false, false, false, false, false];
         this.gridsReady = 0;
+        this.totalBulbNum = 3;
+        this.totalSwitchNum = 2;
         // detect EXIT key event
         cc.eventManager.addListener({
             event: cc.EventListener.KEYBOARD,
@@ -141,19 +143,21 @@ cc.Class({
         var gridNum = parseInt(customEventData);
         if (gridNum < 5 && gridNum >= 0)  // valid number
         {
-            if (self.itemSelected == 'bulb')
+            if (self.itemSelected == 'bulb' && self.totalBulbNum > 0)
             {
                 self.grids[gridNum].getComponent('grid').SetItem(self.itemSelected);
                 self.selectionBulb.getComponent('selectionTemplate').DecreaseNum();
                 self.items[gridNum] = self.itemSelected;
                 self.gridsReady++;
+                self.totalBulbNum--;
             }
-            else if (self.itemSelected == 'switch')
+            else if (self.itemSelected == 'switch' && self.totalSwitchNum > 0)
             {
                 self.grids[gridNum].getComponent('grid').SetItem(self.itemSelected);
                 self.selectionSwitch.getComponent('selectionTemplate').DecreaseNum();
                 self.items[gridNum] = self.itemSelected;
                 self.gridsReady++;
+                self.totalSwitchNum--;
             }
         }
     },
@@ -261,5 +265,10 @@ cc.Class({
     HideWarning: function()
     {
         this.warning.active = false;
-    }
+    },
+
+    GotoNextLevel: function()  // load the next level's scene 
+    {
+        cc.director.loadScene('Level6');
+    },
 });

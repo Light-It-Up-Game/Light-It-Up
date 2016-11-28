@@ -107,6 +107,11 @@ cc.Class({
     Reload: function()
     {
         cc.director.loadScene('Level4');
-    }
+    },
+
+    GotoNextLevel: function()  // load the next level's scene 
+    {
+        cc.director.loadScene('Level5');
+    },
 
 });
