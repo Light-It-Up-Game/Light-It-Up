@@ -109,10 +109,8 @@ cc.Class({
                 self.switch0 = !self.switch0;
                 self.nodeSwitch0.getComponent('switch').Toggle();
                 self.warning.active = false;
-                console.log('self.switch0: ' + self.switch0);
                 if (self.switch0 == true)
                 {
-                    console.log('IsOver is invoked');
                     self.IsOver();
                 }
             }
@@ -204,11 +202,6 @@ cc.Class({
     IsOver: function()
     {
         self = this;
-        console.log(self.switch0);
-        for (var i = 0; i < 6; i++)
-        {
-            console.log(self.items[i]);
-        }
         if (false == self.switch0)
         {
             return;
