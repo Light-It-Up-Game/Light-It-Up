@@ -201,7 +201,7 @@ cc.Class({
 
     IsOver: function()
     {
-        self = this;
+        var self = this;
         if (false == self.switch0)
         {
             return;
@@ -363,6 +363,7 @@ cc.Class({
 
     GridTurnOn: function(gridNum)
     {
+        var self = this;
         self.grids[gridNum].getComponent('grid').bulb.getComponent('bulb').Toggle();
         self.gridBulbOn[gridNum] = true;
     }, 

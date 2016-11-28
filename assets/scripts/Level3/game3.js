@@ -118,7 +118,7 @@ cc.Class({
 
     Release: function()
     {
-        self = this;
+        var self = this;
         if (!self.lightOn)  // if light is off, we first light it up
         {
             self.lightOn= true;

@@ -165,7 +165,7 @@ cc.Class({
 
     IsOver: function()
     {
-        self = this;
+        var self = this;
         if (false == self.switch0)
         {
             return;

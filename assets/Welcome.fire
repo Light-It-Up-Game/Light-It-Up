@@ -254,7 +254,7 @@
     "_position": {
       "__type__": "cc.Vec2",
       "x": 0,
-      "y": 80
+      "y": 113.33500000000001
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -309,13 +309,13 @@
     "_alignFlags": 17,
     "_left": 0,
     "_right": 0,
-    "_top": 0.3333359375,
+    "_top": 180,
     "_bottom": 0,
     "_verticalCenter": 0,
     "_horizontalCenter": 0,
     "_isAbsLeft": true,
     "_isAbsRight": true,
-    "_isAbsTop": false,
+    "_isAbsTop": true,
     "_isAbsBottom": true,
     "_isAbsHorizontalCenter": true,
     "_isAbsVerticalCenter": true,
