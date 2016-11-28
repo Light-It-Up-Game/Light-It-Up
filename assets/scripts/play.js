@@ -1,4 +1,4 @@
-var unlock = [true, false, false, false, false, false];
+var unlock = [true, true, true, true, true, true];
 var done = [false, false, false, false, false, false];
 cc.Class({
     extends: cc.Component,
