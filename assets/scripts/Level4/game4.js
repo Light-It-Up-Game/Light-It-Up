@@ -21,7 +21,7 @@ cc.Class({
         },
     },
 
-    onload: function()
+    onLoad: function()
     {
         this.switch1 = false;
         this.switch2 = false;

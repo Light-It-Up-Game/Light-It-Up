@@ -21,7 +21,7 @@ cc.Class({
         }
     },
 
-    onload: function()
+    onLoad: function()
     {
         this.switch1 = false;
         this.switch2 = false;
@@ -124,19 +124,19 @@ cc.Class({
             self.lightOn= true;
             self.bulb.getComponent('bulb').Toggle();
         }
-        /*
-        // wait 5 seconds to turn off
-        var delay = 1;
+        // wait 1 seconds to turn off
+        var delay = 0.5;
         self.scheduleOnce(function(){
             self.bulb.getComponent('bulb').Toggle();
             self.lightOn = false;
             self.capacitance.getComponent('capacitance').Toggle();
             self.charged = false;
         }, delay);
-        */
-        self.bulb.getComponent('bulb').Toggle();
-        self.lightOn = false;
-        self.capacitance.getComponent('capacitance').Toggle();
-        self.charged = false;
+        /*
+            self.bulb.getComponent('bulb').Toggle();
+            self.lightOn = false;
+            self.capacitance.getComponent('capacitance').Toggle();
+            self.charged = false;
+         */
     }
 });
