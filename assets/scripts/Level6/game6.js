@@ -49,8 +49,8 @@ cc.Class({
     {
         this.switch0 = false;
         this.itemSelected = '';
-        this.items = ['', '', '', '', ''];
-        this.gridBulbOn = [false, false, false, false, false];
+        this.items = ['', '', '', '', '', '', ''];
+        this.gridBulbOn = [false, false, false, false, false, false, false];
         this.gridsReady = 0;
         // detect EXIT key event
         cc.eventManager.addListener({
@@ -81,7 +81,7 @@ cc.Class({
         var self = this;
         if (false == self.switch0)
         {
-            if (self.gridsReady >= 5) // all grids had been set an item respectively
+            if (self.gridsReady >= 7) // all grids had been set an item respectively
             {
                 self.switch0 = !self.switch0;
                 self.nodeSwitch0.getComponent('switch').Toggle();
@@ -102,7 +102,7 @@ cc.Class({
         {
             self.switch0 = !self.switch0;
             self.nodeSwitch0.getComponent('switch').Toggle();
-            for (var i = 0; i < 5; i++)
+            for (var i = 0; i < 7; i++)
             {
                 if (true == self.gridBulbOn[i])
                 {
@@ -139,7 +139,7 @@ cc.Class({
     {
         var self = this;
         var gridNum = parseInt(customEventData);
-        if (gridNum < 5 && gridNum >= 0)  // valid number
+        if (gridNum < 7 && gridNum >= 0)  // valid number
         {
             if (self.itemSelected == 'bulb')
             {
@@ -162,7 +162,7 @@ cc.Class({
     {
         self = this;
         console.log(self.switch0);
-        for (var i = 0; i < 5; i++)
+        for (var i = 0; i < 7; i++)
         {
             console.log(self.items[i]);
         }
@@ -255,7 +255,7 @@ cc.Class({
 
     Reload: function()
     {
-        cc.director.loadScene('Level5');
+        cc.director.loadScene('Level6');
     },
 
     HideWarning: function()
