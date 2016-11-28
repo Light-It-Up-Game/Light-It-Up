@@ -124,6 +124,7 @@ cc.Class({
             self.lightOn= true;
             self.bulb.getComponent('bulb').Toggle();
         }
+        /*
         // wait 5 seconds to turn off
         var delay = 1;
         self.scheduleOnce(function(){
@@ -132,5 +133,10 @@ cc.Class({
             self.capacitance.getComponent('capacitance').Toggle();
             self.charged = false;
         }, delay);
+        */
+        self.bulb.getComponent('bulb').Toggle();
+        self.lightOn = false;
+        self.capacitance.getComponent('capacitance').Toggle();
+        self.charged = false;
     }
 });
