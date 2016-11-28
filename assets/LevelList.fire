@@ -231,7 +231,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 960,
+      "width": 860,
       "height": 640
     },
     "_children": [],
@@ -368,7 +368,7 @@
     "_enabled": true,
     "_layoutSize": {
       "__type__": "cc.Size",
-      "width": 960,
+      "width": 860,
       "height": 640
     },
     "_resize": 1,
@@ -395,8 +395,8 @@
     "_enabled": true,
     "isAlignOnce": true,
     "_alignFlags": 45,
-    "_left": 0,
-    "_right": 0,
+    "_left": 50,
+    "_right": 50,
     "_top": 0,
     "_bottom": 0,
     "_verticalCenter": 0,
