@@ -3,7 +3,8 @@ var Level = cc.Class({
     properties:
     {
         id: 0,
-        icon: cc.SpriteFrame
+        icon: cc.SpriteFrame,
+        iconDone: cc.SpriteFrame
     }
 });
 
@@ -30,7 +31,8 @@ cc.Class({
             this.node.addChild(level);
             level.getComponent('levelTemplate').init({
                 id: data.id,
-                icon: data.icon
+                icon: data.icon,
+                iconDone: data.iconDone
             });
         }
         // detect EXIT key event

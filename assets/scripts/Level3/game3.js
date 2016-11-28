@@ -106,6 +106,9 @@ cc.Class({
     YouWin: function()
     {
         this.win.active = true;
+        var ls = cc.sys.localStorage;
+        ls.setItem("doneLevel3", true);
+        ls.setItem("unlockLevel4", true);
     },
 
     GotoNextLevel: function()  // load the next level's scene 

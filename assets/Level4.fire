@@ -2265,7 +2265,7 @@
     "target": {
       "__id__": 2
     },
-    "component": "game3",
+    "component": "game4",
     "handler": "GotoNextLevel",
     "customEventData": ""
   },

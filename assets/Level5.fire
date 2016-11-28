@@ -4133,7 +4133,7 @@
     "target": {
       "__id__": 2
     },
-    "component": "game3",
+    "component": "game5",
     "handler": "GotoNextLevel",
     "customEventData": ""
   },

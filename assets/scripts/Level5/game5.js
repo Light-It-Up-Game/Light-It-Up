@@ -119,6 +119,9 @@ cc.Class({
     {
         this.youwin.active = true;
         this.youlose.active = false;
+        var ls = cc.sys.localStorage;
+        ls.setItem("doneLevel5", true);
+        ls.setItem("unlockLevel6", true);
     },
 
     YouLose: function()

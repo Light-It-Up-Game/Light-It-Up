@@ -98,5 +98,8 @@ cc.Class({
     YouWin: function()
     {
         this.win.active = true;
+        var ls = cc.sys.localStorage;
+        ls.setItem("doneLevel2", true);
+        ls.setItem("unlockLevel3", true);
     }
 });

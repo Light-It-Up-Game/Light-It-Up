@@ -1,11 +1,5 @@
-var progress = {
-    doneLevel1: false,
-    doneLevel2: false,
-    doneLevel3: false,
-    doneLevel4: false,
-    doneLevel5: false,
-    doneLevel6: false,
-};
+var unlock = [true, false, false, false, false, false];
+var done = [false, false, false, false, false, false];
 cc.Class({
     extends: cc.Component,
     properties:
@@ -25,9 +19,20 @@ cc.Class({
 
     onLoad: function()
     {
-        for (var i = 0; i < 6; i++)
+        var ls = cc.sys.localStorage;
+        ls.setItem("unlockLevel1", true);
+        for (var i = 1; i <= 6; i++)
         {
-            //if ()
+            var dataUnlock = ls.getItem('unlockLevel' + i);
+            if (dataUnlock == null)
+            {
+                ls.setItem("unlockLevel" + i, unlock[i - 1]);
+            }
+            var dataDone = ls.getItem('doneLevel' + i);
+            if (dataDone == null)
+            {
+                ls.setItem("doneLevel" + i, done[i - 1]);
+            }
         }
 
         // detect EXIT key event
