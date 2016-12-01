@@ -285,10 +285,8 @@ cc.Class({
         {
             self.GridTurnOn(0);
             self.GridTurnOn(3);
-            self.GridTurnOn(5);  
             self.nodeBulb6.getComponent('bulb').Toggle();
             self.bulb6On = true;
-            self.YouWin();
         }
 
         else if (self.items[1] == 'switch' && self.items[2] == 'switch' && self.items[5] == 'switch')
