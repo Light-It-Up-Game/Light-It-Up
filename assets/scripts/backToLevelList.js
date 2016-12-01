@@ -23,6 +23,11 @@ cc.Class({
     LoadScene: function()
     {
         cc.director.loadScene('LevelList');
+    },
+
+    BackToWelcome: function()
+    {
+        cc.director.loadScene('Welcome');
     }
     // called every frame, uncomment this function to activate update callback
     // update: function (dt) {

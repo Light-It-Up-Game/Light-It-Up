@@ -83,6 +83,11 @@ cc.Class({
     GotoLevels: function()
     {
         cc.director.loadScene('LevelList');
+    },
+
+    Exit: function()
+    {
+        cc.director.end();
     }
 
 });
